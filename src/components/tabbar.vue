@@ -12,8 +12,6 @@
 </template>
  
 <script>
-import { Tabbar, TabbarItem } from 'vant';
-
 export default {
   name: "tabbar",
   data() {
