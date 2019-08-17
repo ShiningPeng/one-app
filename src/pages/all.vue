@@ -2,7 +2,7 @@
   <div class="all-container">
     <div class="all-header">
       ONE IS ALL
-      <span><i class="iconfont"></i></span>
+      <span><i class="iconfont">&#xe619;</i></span>
     </div>
     <div class="all-banner"></div>
     <div class="white-space"></div>
