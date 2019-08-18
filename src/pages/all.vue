@@ -1,48 +1,76 @@
 <template>
   <div class="all-container">
     <div class="all-header">
-      ONE IS ALL
-      <span><i class="iconfont">&#xe619;</i></span>
+      ONE &nbsp;&nbsp;IS&nbsp;&nbsp; ALL
+      <span class="all-header-icon"><i class="iconfont">&#xe619;</i></span>
     </div>
-    <div class="all-banner"></div>
+    <div class="all-banner">
+      <img src="../assets/images/bg.png" alt="">
+    </div>
     <div class="white-space"></div>
     <div class="all-sortnav">
       <span class="text">分类导航</span>
       <div class="all-sortnav-items">
-        <div class="all-sortnav-smallitem"><img src="" alt="">图文</div>
-        <div class="all-sortnav-smallitem"><img src="" alt="">问答</div>
-        <div class="all-sortnav-bigitem"><img src="" alt="">阅读</div>
-        <div class="all-sortnav-smallitem"><img src="" alt="">连载</div>
-        <div class="all-sortnav-smallitem"><img src="" alt="">影视</div>
-        <div class="all-sortnav-smallitem"><img src="" alt="">音乐</div>
-        <div class="all-sortnav-smallitem"><img src="" alt="">电台</div>
+        <div class="all-sortnav-smallitem">
+          <img src="../assets/images/bg.png" alt="">
+          <span>图文</span>
+        </div>
+        <div class="all-sortnav-smallitem">
+          <img src="../assets/images/bg.png" alt="">
+          <span>问答</span>
+        </div>
+        <div class="all-sortnav-bigitem">
+          <img src="../assets/images/bg.png" alt="">
+          <span>阅读</span>
+        </div>
+        <div class="all-sortnav-smallitem">
+          <img src="../assets/images/bg.png" alt="">
+          <span>连载</span> 
+        </div>
+        <div class="all-sortnav-smallitem">
+          <img src="../assets/images/bg.png" alt="">
+          <span>影视</span> 
+        </div>
+        <div class="all-sortnav-smallitem">
+          <img src="../assets/images/bg.png" alt="">
+          <span>音乐</span> 
+        </div>
+        <div class="all-sortnav-smallitem">
+          <img src="../assets/images/bg.png" alt="">
+          <span >电台</span>
+        </div>
       </div>
     </div>
     <div class="white-space"></div>
-    <div class="all-zhuan">
+    <div class="all-zhuanti">
       <div class="all-zhuanti-img">
-        <img src="" alt="">
+        <img src="../assets/images/bg.png" alt="">
       </div>
       <p>你是我最难忘的夏天</p>
     </div>
-    <div class="all-zhuan">
+    <div class="white-space"></div>
+    <div class="all-zhuanti">
       <div class="all-zhuanti-img">
-        <img src="" alt="">
+        <img src="../assets/images/bg.png" alt="">
       </div>
       <p>第22届上海国际电影节展映特辑</p>
+
     </div>
-    <div class="all-zhuan">
+    <div class="white-space"></div>
+    <div class="all-zhuanti">
       <div class="all-zhuanti-img">
-        <img src="" alt="">
+        <img src="../assets/images/bg.png" alt="">
       </div>
       <p>胖子的自我修养</p>
     </div>
-    <div class="all-zhuan">
+    <div class="white-space"></div>
+    <div class="all-zhuanti">
       <div class="all-zhuanti-img">
-        <img src="" alt="">
+        <img src="../assets/images/bg.png" alt="">
       </div>
       <p>我想探索你内心的宇宙</p>
     </div>
+    <div class="white-space"></div>
     <div class="all-hot-authors">
       <p>近期热门作者</p>
       <Author />
@@ -64,5 +92,72 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-  
+.all-container 
+  width 100%
+  .all-header
+    width 100%
+    background #fff
+    text-align center
+    font-weight 700
+    height 60px
+    line-height 60px 
+    box-sizing border-box
+    border 1px solid #000
+    font-size 20px
+    display flex 
+    .all-header-icon
+      display inline-block
+  .all-banner
+    width 100%
+    height 200px
+    img 
+      width 100%
+      height 100% 
+  .white-space
+    background-color #eeeeee
+    width 100%
+    height 10px
+  .all-sortnav
+    width 90%
+    padding 3% 5% 0 5%
+    .text
+      display block
+      margin-bottom 15px
+    .all-sortnav-items
+      width 100%
+      // display flex 
+      box-sizing border-box
+      border 1px solid #000 
+      .all-sortnav-smallitem
+        width 25%
+        display inline-block
+        box-sizing border-box
+        border 1px solid #000
+        img
+          width 100%
+          height 100%
+      .all-sortnav-bigitem
+        width 50%
+        display inline-block
+        box-sizing border-box
+        border 1px solid #000
+        height 100px
+        img
+          width 100%
+          height 100%
+  .all-zhuanti
+    width 90%
+    padding 5%
+    &-img 
+      width 100%
+      height 180px
+      margin-bottom 10px
+      img 
+        width 100%
+        height 100%
+    p
+      display block
+      height 20px
+      line-height 20px
+      font-size 15px
 </style>
