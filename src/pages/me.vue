@@ -1,7 +1,10 @@
 <template>
   <div class="me-container">
     <div class="me-container-up">
-      <!-- <img src="../assets/images/bg.png" alt=""> -->
+      <!-- <div class="blank-box"></div> -->
+      <div class="me-container-img">
+        <img src="../assets/images/bg.png" alt="" width="100%" height="100%">
+      </div>
       <!-- ../assets/images/bg.png -->
       <div class="me-header">
         <span><i class="iconfont">&#xe6b6;</i></span>
@@ -84,8 +87,22 @@ export default {
   .me-container-up
     width 100%
     height 400px
+    text-align center
+    position relative
+    // .blank-box
+    //   width 100%
+    //   height 60px
+    //   position fixed
+    .me-container-img
+      width 100%
+      height 100% 
+      position absolute
+      opacity 0.2
+      // position fixed
+      // z-index -1 
+        
     // display flex
-    background-image url('../assets/images/bg.png')
+    // background-image url('../assets/images/bg.png')
     .me-header
       // border 1px solid #808080
       box-sizing border-box
@@ -95,7 +112,6 @@ export default {
       display flex
       position fixed
       padding 0 10px
-      // margin-bottom 20px
       .me-header-name
         flex 3
       .iconfont
@@ -106,6 +122,7 @@ export default {
       height 120px
       margin-bottom 20px
       // margin 60px 20px
+      padding-top 60px
       .me-user-avatar
         width 70px
         height 70px

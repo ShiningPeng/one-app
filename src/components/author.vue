@@ -54,12 +54,12 @@ export default {
     margin-left 20px
     height 100%
     line-height 25px
-    .author-name
-      // color red
+    text-align left
+    // .author-name
+    //   text-align left
     .author-desc
       color #808080  
   .guanzhu-btn
-    // display inline-block
     flex 1
     text-align right
     button
@@ -68,7 +68,4 @@ export default {
       width 40px
       height 20px
       line-height 20px 
-     
-
-
 </style>
