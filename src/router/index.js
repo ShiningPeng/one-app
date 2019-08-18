@@ -10,6 +10,7 @@ import Share from '@/pages/share'
 import Author from '@/components/author'
 import CommentBtn from '@/components/commentButton'
 import Search from '@/pages/search'
+import Sort from '@/pages/sort'
 
 Vue.use(Router)
 
@@ -68,6 +69,11 @@ export default new Router({
       path: '/search',
       name: 'Search',
       component: Search 
+    },
+    {
+      path: '/sort',
+      name: 'Sort',
+      component: Sort 
     }
   ]
 })
