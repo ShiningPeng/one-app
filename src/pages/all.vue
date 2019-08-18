@@ -2,7 +2,11 @@
   <div class="all-container">
     <div class="all-header">
       ONE &nbsp;&nbsp;IS&nbsp;&nbsp; ALL
-      <span class="all-header-icon"><i class="iconfont">&#xe619;</i></span>
+      <span class="all-header-icon">
+        <router-link to="/search">
+          <i class="iconfont">&#xe619;</i>
+        </router-link>
+      </span>
     </div>
     <div class="all-banner">
       <img src="../assets/images/bg.png" alt="">
@@ -93,6 +97,7 @@ export default {
 <style lang="stylus" scoped>
 .all-container 
   width 100%
+  text-align center
   .all-header
     width 100%
     background #fff
@@ -100,15 +105,20 @@ export default {
     font-weight 700
     height 60px
     line-height 60px 
-    box-sizing border-box
-    border 1px solid #000
+    // box-sizing border-box
+    // border 1px solid #000
     font-size 20px
-    display flex 
+    position fixed
     .all-header-icon
-      display inline-block
+      display block
+      float right
+      margin-right 5%
+      .iconfont
+        font-size 20px
   .all-banner
     width 100%
     height 250px
+    padding-top 60px
     img 
       width 100%
       height 100% 
@@ -124,7 +134,6 @@ export default {
       margin-bottom 15px
     .all-sortnav-items
       width 100%
-      // display flex 
       box-sizing border-box
       border 1px solid #000
       font-size 0 
@@ -140,13 +149,9 @@ export default {
         img
           width 100%
           height 100%
-          // z-index 1
-
         .all-sortnav-text
           z-index 10
           position absolute
-          // text-align center
-
       .all-sortnav-bigitem
         width 50%
         display inline-block

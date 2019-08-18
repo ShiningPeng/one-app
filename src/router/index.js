@@ -9,6 +9,7 @@ import Detail from '@/pages/detail'
 import Share from '@/pages/share'
 import Author from '@/components/author'
 import CommentBtn from '@/components/commentButton'
+import Search from '@/pages/search'
 
 Vue.use(Router)
 
@@ -62,6 +63,11 @@ export default new Router({
       path: '/share',
       name: 'Share',
       component: Share 
+    },
+    {
+      path: '/search',
+      name: 'Search',
+      component: Search 
     }
   ]
 })
