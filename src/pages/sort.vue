@@ -8,12 +8,13 @@
 export default {
   name:'sort',
   methods:{
-    // con() {
-    //   console.log(this.$route.params);
-    // }
+    con() {
+      console.log(this.$route.params);
+    }
   },
   created(){
-    console.log(Vue.$route.params)
+    this.con();
+    // console.log(Vue.$route.params)
   }
   // mounted:{
   //   // console.log

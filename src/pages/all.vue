@@ -113,6 +113,11 @@ export default {
       display block
       float right
       margin-right 5%
+      a 
+        text-decoration: none
+        color black
+      .router-link-active 
+        text-decoration none
       .iconfont
         font-size 20px
   .all-banner
