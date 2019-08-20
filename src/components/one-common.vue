@@ -8,12 +8,12 @@
             <h3 class='title'>{{item.title}}</h3>
             <p class='author'>{{item.author}}</p>
             <div class='pic'>
-              <img src='../assets/images/bg.png' alt='叶修' />
+              <img :src='item.imgUrl' alt='叶修' />
             </div>
             <p class='desc'>{{item.desc}}</p></div>
         </router-link>
           <div class='foot'>
-            <span class='date'>{{item.date}}</span>
+            <span class='date'>{{date}}</span>
             <div class='aixin-forwarding'>
               <span class='aixin'>
                 <i class='iconfont'>&#xe601;</i>
@@ -36,7 +36,7 @@
 
 <script>
 export default {
-  props:['items'],
+  props:['items','date'],
   name: 'item',
   data() {
     return {

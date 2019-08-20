@@ -3,12 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import axios from 'axios'
 import '@/assets/css/iconfont/iconfont.styl'
 import { Tabbar, TabbarItem, Icon, Cell, Search } from 'vant';
 
 Vue.use(Tabbar).use(TabbarItem).use(Icon).use(Cell).use(Search);
 Vue.config.productionTip = false;
-
+Vue.prototype.$axios = axios;
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

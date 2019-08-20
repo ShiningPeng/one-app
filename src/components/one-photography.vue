@@ -1,11 +1,11 @@
 <template>
   <div class="one-photography-container">
     <div class="one-photography-photo">
-      <img src="../assets/images/bg.png" alt="">
+      <img :src="item.imgUrl" alt="">
     </div>
-    <span class="one-photography-author">摄影 | Toa Heftiba</span>
-    <p class="one-photography-desc">我爱独处，我从来没有发现比独处更好地伙伴了。在多数情况下，我们外出，到人们中间去时，比呆在自己的屋子里更为孤独。</p>
-    <span class="one-photography-source">梭罗《瓦登尔湖》</span>
+    <span class="one-photography-author">{{item.type}}&nbsp;|&nbsp;{{item.author}}</span>
+    <p class="one-photography-desc">{{item.desc}}</p>
+    <span class="one-photography-source">{{item.source}}</span>
     <div class="bottom-btn">
       <span class="discovery"><i class="iconfont">&#xe6b9;</i><span id="text">发现</span></span>
       <div class="btn-right">
@@ -16,7 +16,7 @@
               <i class="iconfont">&#xe60d;</i>
             </router-link>
           </span>
-        <span class="dianzan"><i class="iconfont">&#xe601;</i>835</span>
+        <span class="dianzan"><i class="iconfont">&#xe601;</i>{{item.aixinCount}}</span>
       </div>
     </div>
     <div class="white-space"></div>
@@ -26,6 +26,7 @@
 
 <script>
 export default {
+  props:['item'],
   name:'onePhotography',
   data () {
     return {
