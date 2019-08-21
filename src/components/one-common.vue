@@ -36,7 +36,16 @@
 
 <script>
 export default {
-  props:['items','date'],
+  props:{
+    items:{
+      type:Array,
+      default:{}
+    },
+    date:{
+      type:String,
+      default:''
+    }
+  },
   name: 'item',
   data() {
     return {
