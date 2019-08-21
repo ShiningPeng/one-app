@@ -45,7 +45,6 @@ export default {
       //  console.log(res);
       this.item = res.data.result.items[0];
       this.date = res.data.result.date.substring(5);
-      console.log(this.date);
       this.items = res.data.result.items.slice(1);
      })
    }
@@ -65,5 +64,4 @@ html,body
   .item-top
     margin-top 50px
     text-decoration none
-
 </style>

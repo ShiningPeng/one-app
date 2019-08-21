@@ -16,15 +16,18 @@
         <li v-for="(comment,index) in commentList" :key="index">{{comment.userName}}---：<br/>{{comment.content}}</li>
       </ul>
     </div>
+    <CommentButton />
   </div>
 </template>
 
 <script>
-import Author from '@/components/author'
+import Author from '@/components/author';
+import CommentButton from '@/components/commentButton'
 export default {
   name:'detail',
   components:{
-    Author
+    Author,
+    CommentButton
   },
   data () {
     return {
@@ -63,6 +66,11 @@ export default {
 <style lang='stylus' scoped>
 .article-container
   width 90%
+  top 0
+  bottom 0
+  right 0
+  left 0
+  z-index 100
   padding 5% 5% 0 5%
   .article-title
     font-size 25px

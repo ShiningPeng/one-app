@@ -21,7 +21,6 @@
     </div>
     <div class="white-space"></div>
   </div> 
-
 </template>
 
 <script>

@@ -1,37 +1,35 @@
 <template>
-<div>
-    <ul>
-      <li  v-for="(item,index) in items" :key="index" >
-        <router-link to="/detail">
-          <div class='com-coner'>
-            <div class='con-type'>- {{item.type}} -</div>
-            <h3 class='title'>{{item.title}}</h3>
-            <p class='author'>{{item.author}}</p>
-            <div class='pic'>
-              <img :src='item.imgUrl' alt='叶修' />
-            </div>
-            <p class='desc'>{{item.desc}}</p></div>
-        </router-link>
-          <div class='foot'>
-            <span class='date'>{{date}}</span>
-            <div class='aixin-forwarding'>
-              <span class='aixin'>
-                <i class='iconfont'>&#xe601;</i>
-                {{item.aixinCount}}
-              </span>
-              <router-link to="/share">
-                <span class='forwarding'>
-                  <i class='iconfont'>&#xe60d;</i>
+  <div>
+      <ul>
+        <li  v-for="(item,index) in items" :key="index" >
+          <router-link to="/detail">
+            <div class='com-coner'>
+              <div class='con-type'>- {{item.type}} -</div>
+              <h3 class='title'>{{item.title}}</h3>
+              <p class='author'>{{item.author}}</p>
+              <div class='pic'>
+                <img :src='item.imgUrl' alt='叶修' />
+              </div>
+              <p class='desc'>{{item.desc}}</p></div>
+          </router-link>
+            <div class='foot'>
+              <span class='date'>{{date}}</span>
+              <div class='aixin-forwarding'>
+                <span class='aixin'>
+                  <i class='iconfont'>&#xe601;</i>
+                  {{item.aixinCount}}
                 </span>
-              </router-link>
+                <router-link to="/share">
+                  <span class='forwarding'>
+                    <i class='iconfont'>&#xe60d;</i>
+                  </span>
+                </router-link>
+              </div>
             </div>
-          </div>
-        <div class="white-space"></div>
-    </li>
-  </ul>
-</div>
-
-  
+          <div class="white-space"></div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -39,7 +37,7 @@ export default {
   props:{
     items:{
       type:Array,
-      default:{}
+      default:[]
     },
     date:{
       type:String,

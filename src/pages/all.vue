@@ -97,7 +97,7 @@ export default {
 <style lang="stylus" scoped>
 .all-container 
   width 100%
-  text-align center
+  // text-align center
   .all-header
     width 100%
     background #fff
@@ -185,6 +185,7 @@ export default {
       height 20px
       line-height 20px
       font-size 15px
+      text-align left
   .all-hot-authors
     width 90%
     padding 5% 5% 15% 5%

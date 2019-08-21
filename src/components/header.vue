@@ -15,13 +15,12 @@ export default {
     return {
       day: "26",
       yearAndMonth: "Jul.2019"
-    };
+    }
   }
-};
+}
 </script>
 
 <style lang="stylus">
-@import '../assets/css/function';
 
 .header 
   position fixed
