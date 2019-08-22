@@ -2,12 +2,16 @@
   <div class="one-container">
     <!-- header -->
     <Header />
-    <OnePhotography :item="item"/>
+    
     <!-- <keep-alive> -->
-      <!-- <div class="item-top"> -->
-        <Commont :items="items"  :date="date"/>
-      <!-- </div> -->
-      <!-- <router-view></router-view> -->
+    <!-- <div class="item-top"> -->
+    <Scroll :data="items" :pullup="true" :pulldown="true" :refreshDelay=20>
+      <OnePhotography :item="item" />
+      <Commont :items="items" :date="date" />
+    </Scroll> 
+    
+    <!-- </div> -->
+    <!-- <router-view></router-view> -->
     <!-- </keep-alive> -->
     <!-- 摄影 -->
     <!-- smallNavigator -->
@@ -17,51 +21,89 @@
     <!-- 影视 -->
     <!-- 深夜电台 -->
     <!-- 上一个 -->
+    <div class="previous" @click="previousOne">
+      <div class="previous-img">
+        <img src="../assets/images/bg.png" alt="">
+      </div>
+      <span>上一个</span>
+    </div>
   </div>
 </template>
 
 <script>
-import Header from '@/components/header';
-import Commont from '@/components/one-common';
-import OnePhotography from '@/components/one-photography';
+import Header from "@/components/header";
+import Commont from "@/components/one-common";
+import OnePhotography from "@/components/one-photography";
+import Scroll from "@/components/scroll";
 
 export default {
   name: "One",
   components: {
     Header,
     Commont,
-    OnePhotography
+    OnePhotography,
+    Scroll
   },
   data() {
-    return { 
-      item:[], 
-      date:'', 
-      items:[]
+    return {
+      item: [],
+      date: "",
+      items: [],
+      receive:[],
+      i:0
     };
   },
   methods: {
-   getPhotos() {
-     this.$axios.get('https://www.easy-mock.com/mock/5cbf0110a70f960bc333c4e7/home').then(res => {
-      //  console.log(res);
-      this.item = res.data.result.items[0];
-      this.date = res.data.result.date.substring(5);
-      this.items = res.data.result.items.slice(1);
-     })
-   }
+    changeData(receive){
+      this.item = receive.items[0];
+      this.date = receive.date.substring(5);
+      this.items = receive.items.slice(1);
+    },
+    previousOne(){
+      this.i++;
+      this.changeData(this.receive[this.i]);
+    },
+    getData() {
+      this.$axios
+        .get("https://www.easy-mock.com/mock/5cbf0110a70f960bc333c4e7/home")
+        .then(res => {
+          console.log(res);
+          this.receive = res.data.result.all;
+          // this.i = 0;
+          this.changeData(this.receive[this.i]);
+        });
+    }
   },
-  created(){
-    this.getPhotos();
+  created() {
+    this.getData();
   }
 };
 </script>
 
 <style lang="stylus" scoped>
-html,body
+html, body 
   width 100%
   height 100%
-  .one-container
-    padding-bottom 60px
-  .item-top
+
+  .one-container 
+    padding-bottom 50px
+  
+  .item-top 
     margin-top 50px
     text-decoration none
+  .previous
+    width 100%
+    height 150px
+    position relative
+    span 
+      position absolute
+      text-align center
+      // display flex
+      z-index 1000
+    .previous-img
+      width 100%
+      height 100%
+      img 
+        width 100%
+        height 100%
 </style>
