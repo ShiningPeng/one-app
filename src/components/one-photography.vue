@@ -3,7 +3,7 @@
     <div class="one-photography-photo">
       <img :src="item.imgUrl" alt="">
     </div>
-    <span class="one-photography-author">{{item.type}}&nbsp;|&nbsp;{{item.author}}</span>
+    <span class="one-photography-author">{{item.headType}}&nbsp;|&nbsp;{{item.author}}</span>
     <p class="one-photography-desc">{{item.desc}}</p>
     <span class="one-photography-source">{{item.source}}</span>
     <div class="bottom-btn">

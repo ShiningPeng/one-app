@@ -9,6 +9,7 @@ import Detail from '@/pages/detail'
 import Share from '@/pages/share'
 import Author from '@/components/author'
 import CommentBtn from '@/components/commentButton'
+import BackBtn from '@/components/backButton'
 import Search from '@/pages/search'
 import Sort from '@/pages/sort'
 
@@ -74,6 +75,11 @@ export default new Router({
       path: '/sort',
       name: 'Sort',
       component: Sort 
+    },
+    {
+      path: '/backbtn',
+      name: 'BackBtn',
+      component: BackBtn 
     }
   ]
 })

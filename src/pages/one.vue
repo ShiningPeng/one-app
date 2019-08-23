@@ -61,6 +61,7 @@ export default {
     },
     previousOne(){
       this.i++;
+      if(this.i > 6) this.i = 0;
       this.changeData(this.receive[this.i]);
     },
     getData() {

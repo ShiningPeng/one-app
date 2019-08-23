@@ -1,17 +1,17 @@
 <template>
   <div>
       <ul>
-        <li  v-for="(item,index) in items" :key="index" >
-          <router-link to="/detail">
+        <li  v-for="(item,index) in items" :key="index" @click="changeToDetail(item.id, item.type,item.headType)">
+          <!-- <router-link to="/detail"> -->
             <div class='com-coner'>
-              <div class='con-type'>- {{item.type}} -</div>
+              <div class='con-type'>- {{item.headType}} -</div>
               <h3 class='title'>{{item.title}}</h3>
               <p class='author'>{{item.author}}</p>
               <div class='pic'>
                 <img :src='item.imgUrl' alt='叶修' />
               </div>
               <p class='desc'>{{item.desc}}</p></div>
-          </router-link>
+          <!-- </router-link> -->
             <div class='foot'>
               <span class='date'>{{date}}</span>
               <div class='aixin-forwarding'>
@@ -49,6 +49,12 @@ export default {
     return {
       
     };
+  },
+  methods:{
+    changeToDetail(id, type, headType) {
+      console.log(id, type);
+      this.$router.push({ name:'Detail', params:{id, type, headType}});
+    }
   }
 };
 </script>

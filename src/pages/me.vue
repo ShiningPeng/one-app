@@ -2,9 +2,9 @@
   <div class="me-container">
     <div class="me-container-up">
       <!-- <div class="blank-box"></div> -->
-      <div class="me-container-img">
+      <!-- <div class="me-container-img">
         <img src="../assets/images/bg.png" alt="" width="100%" height="100%">
-      </div>
+      </div> -->
       <!-- ../assets/images/bg.png -->
       <div class="me-header">
         <span><i class="iconfont">&#xe6b6;</i></span>
@@ -93,6 +93,7 @@ export default {
     //   width 100%
     //   height 60px
     //   position fixed
+    background-image url('../assets/images/bg.png')
     .me-container-img
       width 100%
       height 100% 
