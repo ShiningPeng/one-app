@@ -93,7 +93,7 @@ export default {
     //   width 100%
     //   height 60px
     //   position fixed
-    background-image url('../assets/images/bg.png')
+    // background-image url('../assets/images/bg.png')
     .me-container-img
       width 100%
       height 100% 
