@@ -22,7 +22,9 @@ const store = new Vuex.Store({
       state.radioiCollection.push(value);
     },
     addPictureCollection(state, value){
-      state.pictureCollection.push(value);
+      // console.log('state1',state);
+        state.pictureCollection.push(value);
+        // console.log('state2',state);
     },
     addMusicCollection(state, value){
       state.musicCollection.push(value);

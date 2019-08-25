@@ -1,7 +1,7 @@
 <template>
   <div>
     <BackButton :detailType="type" />
-    {{articleCollection}}
+    {{pictureCollection}}
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
     this.getStoreData();
   },
   computed:{
-    ...mapState(['articleCollection'])
+    ...mapState(['articleCollection', 'pictureCollection'])
   },
   methods:{
     getProps() {
@@ -34,7 +34,7 @@ export default {
       // }
     },
     getStoreData(type) {
-      console.log(this.articleCollection);
+      console.log(this.pictureCollection);
     },
     // ...mapMutations['addArticleCollection','addMovieCollection']
   }

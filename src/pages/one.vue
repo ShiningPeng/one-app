@@ -56,9 +56,9 @@ export default {
     ...mapMutations(['addPictureCollection']),
     addToPictureCollection(data){
       console.log('点击了收藏按钮');
-      console.log('data',data);
-      this.addPictureCollection(this.$store.state, data);
-      console.log(this.pictureCollection);
+      // console.log('data',data);
+      this.addPictureCollection(data);
+      // console.log(this.pictureCollection);
       // console.log(this.$store.state.pictureCollection)
     },
     changeData(receive){

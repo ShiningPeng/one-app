@@ -79,7 +79,7 @@ export default {
   methods:{
     changeToDetail(type) {
       this.$router.push({name:'CollectionDetail', params:{type}})
-    }
+    } 
   }
 }
 </script>
