@@ -5,7 +5,7 @@
     
     <keep-alive>
       <Scroll :data="items" :pullup="true" :pulldown="true" :refreshDelay=20>
-        <OnePhotography :item="item" />
+        <OnePhotography :item="item" @addToCollection="addToPictureCollection"/>
         <Commont :items="items" :date="date" />
       </Scroll> 
     </keep-alive>
@@ -30,6 +30,7 @@ import Header from "@/components/header";
 import Commont from "@/components/one-common";
 import OnePhotography from "@/components/one-photography";
 import Scroll from "@/components/scroll";
+import { mapState, mapMutations} from 'vuex';
 
 export default {
   name: "One",
@@ -48,7 +49,18 @@ export default {
       i:0
     };
   },
+  computed:{
+    ...mapState(['pictureCollection'])
+  },
   methods: {
+    ...mapMutations(['addPictureCollection']),
+    addToPictureCollection(data){
+      console.log('点击了收藏按钮');
+      console.log('data',data);
+      this.addPictureCollection(this.$store.state, data);
+      console.log(this.pictureCollection);
+      // console.log(this.$store.state.pictureCollection)
+    },
     changeData(receive){
       this.item = receive.items[0];
       this.date = receive.date.substring(5);

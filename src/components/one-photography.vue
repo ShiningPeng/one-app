@@ -10,7 +10,7 @@
       <span class="discovery"><i class="iconfont">&#xe6b9;</i><span id="text">发现</span></span>
       <div class="btn-right">
         <span class="edit"><i class="iconfont">&#xe63a;</i></span>
-        <span class="collect"><i class="iconfont">&#xe60b;</i></span>
+        <span class="collect" @click="addCollection(item)"><i class="iconfont">&#xe60b;</i></span>
           <span class="zhuanfa">
             <router-link to="/share">
               <i class="iconfont">&#xe60d;</i>
@@ -30,6 +30,11 @@ export default {
   data () {
     return {
       
+    }
+  },
+  methods:{
+    addCollection(data){
+      this.$emit('addToCollection', data);
     }
   }
 }

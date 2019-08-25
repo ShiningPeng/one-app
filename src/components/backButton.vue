@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
 export default {
   name:'backButton',
   props:{
@@ -30,13 +29,12 @@ export default {
     }
   },
   computed:{
-    ...mapState['state']
+    
   },
   methods:{
     addToCollection(collectionData){
-      this.addArticleCollection(state, collectionData)
-    },
-    ...mapMutations['addArticleCollection','addMovieCollection']
+      this.$emit('addToCollection', collectionData);
+    }
   }
 }
 </script>

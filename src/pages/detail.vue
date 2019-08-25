@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackButton :detailType="headType" :collectionType="current"/>
+    <BackButton :detailType="headType" :collectionData="current" @addToCollection="addToCollection"/>
      <div class="article-container">
     <h1 class="article-title">{{current.title}}</h1>
     <span class="article-author" v-show="current.author">{{current.author}}</span>
@@ -26,8 +26,10 @@
 
 <script>
 import Author from '@/components/author';
-import CommentButton from '@/components/commentButton'
-import BackButton from '@/components/backButton'
+import CommentButton from '@/components/commentButton';
+import BackButton from '@/components/backButton';
+import { mapState, mapMutations } from 'vuex';
+
 export default {
   name:'detail',
   components:{
@@ -44,6 +46,9 @@ export default {
   created(){
     this.getData();
   },
+  computed:{
+    // ...mapState['']
+  },
   methods:{
     getData(){
       console.log('调用了getData函数');
@@ -53,7 +58,12 @@ export default {
         console.log(res);
         this.current = res.data.result[id];
       })
-    }
+    },
+    addToCollection(collectionData){
+      console.log('点击了收藏按钮');
+      this.addArticleCollection(this.$store.state, collectionData);
+    },
+    ...mapMutations(['addArticleCollection'])
   }
 }
 </script>
