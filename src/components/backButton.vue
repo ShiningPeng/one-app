@@ -4,25 +4,39 @@
       <i class="iconfont">&#xe61a;</i>
     </span>
     <span class="detail-type">{{detailType}}</span>
-    <span class="iconfont-container right">
+    <span class="iconfont-container right" @click="addToCollection(collectionData)">
       <i class="iconfont collection">&#xe60b;</i>
     </span>
   </div>
 </template>
 
 <script>
+import { mapState, mapMutations } from 'vuex';
 export default {
   name:'backButton',
   props:{
     detailType:{
       type:String,
       default:'详情页'
+    },
+    collectionData:{
+      type:Object,
+      default:{}
     }
   },
   data () {
     return {
       
     }
+  },
+  computed:{
+    ...mapState['state']
+  },
+  methods:{
+    addToCollection(collectionData){
+      this.addArticleCollection(state, collectionData)
+    },
+    ...mapMutations['addArticleCollection','addMovieCollection']
   }
 }
 </script>

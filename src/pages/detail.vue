@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackButton :detailType="headType"/>
+    <BackButton :detailType="headType" :collectionType="current"/>
      <div class="article-container">
     <h1 class="article-title">{{current.title}}</h1>
     <span class="article-author" v-show="current.author">{{current.author}}</span>

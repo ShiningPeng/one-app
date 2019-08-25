@@ -1,7 +1,10 @@
 <template>
   <div id="app">
-    <router-view/>
-      <Tabbar/>
+    <transition name="fade">
+      <router-view ></router-view>
+    </transition>
+    <Tabbar/>
+      
   </div>
 </template>
 
@@ -25,4 +28,17 @@ export default {
     width 100%
     height 100%
     z-index 10
+    .fade-enter 
+      opacity 0
+    
+    .fade-leave
+      opacity 1
+    
+    .fade-enter-active
+      transition opacity .5s
+    
+    .fade-leave-active
+      opacity 0
+      transition opacity .5s
+    
 </style>

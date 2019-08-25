@@ -3,16 +3,12 @@
     <!-- header -->
     <Header />
     
-    <!-- <keep-alive> -->
-    <!-- <div class="item-top"> -->
-    <Scroll :data="items" :pullup="true" :pulldown="true" :refreshDelay=20>
-      <OnePhotography :item="item" />
-      <Commont :items="items" :date="date" />
-    </Scroll> 
-    
-    <!-- </div> -->
-    <!-- <router-view></router-view> -->
-    <!-- </keep-alive> -->
+    <keep-alive>
+      <Scroll :data="items" :pullup="true" :pulldown="true" :refreshDelay=20>
+        <OnePhotography :item="item" />
+        <Commont :items="items" :date="date" />
+      </Scroll> 
+    </keep-alive>
     <!-- 摄影 -->
     <!-- smallNavigator -->
     <!-- one-story -->
@@ -25,7 +21,6 @@
       <div class="previous-img">
         <img src="../assets/images/bg.png" alt="">
       </div>
-      <span>上一个</span>
     </div>
   </div>
 </template>
@@ -96,11 +91,6 @@ html, body
     width 100%
     height 150px
     position relative
-    span 
-      position absolute
-      text-align center
-      // display flex
-      z-index 1000
     .previous-img
       width 100%
       height 100%

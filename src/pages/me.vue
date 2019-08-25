@@ -9,7 +9,7 @@
       <div class="me-header">
         <span><i class="iconfont">&#xe6b6;</i></span>
         <div class="me-header-name">
-          {{user}}
+         
         </div>
         <span><i class="iconfont">&#xe857;</i></span>
       </div>
@@ -30,23 +30,23 @@
     <div class="me-mycollections">
       <p >我的收藏</p>
       <div class="my-collections-items">
-        <div class="my-collections-item">
+        <div class="my-collections-item" @click="changeToDetail('图文')">
           <span><i class="iconfont">&#xe62d;</i></span>
           <span class="item-text">图文</span>
         </div>
-        <div class="my-collections-item">
+        <div class="my-collections-item" @click="changeToDetail('文章')">
           <span><i class="iconfont">&#xe756;</i></span>
           <span class="item-text">文章</span>
         </div>
-        <div class="my-collections-item">
+        <div class="my-collections-item"  @click="changeToDetail('音乐故事收藏')">
           <span><i class="iconfont">&#xe680;</i></span>
           <span class="item-text">音乐</span>
         </div>
-        <div class="my-collections-item">
+        <div class="my-collections-item" @click="changeToDetail('电影')">
           <span><i class="iconfont">&#xe60c;</i></span>
           <span class="item-text">影视</span>
         </div>
-        <div class="my-collections-item">
+        <div class="my-collections-item" @click="changeToDetail('深夜电台收藏')">
           <span><i class="iconfont">&#xe65b;</i></span>
           <span class="item-text">电台</span>
         </div>
@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
   name:'Me',
   data () {
@@ -72,6 +73,12 @@ export default {
         return this.userName;
       }
       return '';
+    },
+    ...mapState['articleCollection']
+  },
+  methods:{
+    changeToDetail(type) {
+      this.$router.push({name:'CollectionDetail', params:{type}})
     }
   }
 }

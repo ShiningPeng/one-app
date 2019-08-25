@@ -12,6 +12,7 @@ import CommentBtn from '@/components/commentButton'
 import BackBtn from '@/components/backButton'
 import Search from '@/pages/search'
 import Sort from '@/pages/sort'
+import CollectionDetail from '@/pages/collectionDetail'
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
       path: '/detail',
       name: 'Detail',
       component: Detail
+    },
+    {
+      path:'/coldetail',
+      name:'CollectionDetail',
+      component:CollectionDetail
     },
     {
       path: '/a',
