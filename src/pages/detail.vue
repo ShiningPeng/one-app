@@ -1,6 +1,6 @@
 <template>
   <div>
-    <BackButton :detailType="headType" :collectionData="current" @addToCollection="addToCollection"/>
+    <BackButton :detailType="headType" :collectionData="current" @addToCollection="addCollection" :colIsShow="true"/>
      <div class="article-container">
     <h1 class="article-title">{{current.title}}</h1>
     <span class="article-author" v-show="current.author">{{current.author}}</span>
@@ -59,11 +59,25 @@ export default {
         this.current = res.data.result[id];
       })
     },
-    addToCollection(collectionData){
+    addCollection(collectionData){
       console.log('点击了收藏按钮');
-      this.addArticleCollection(this.$store.state, collectionData);
+      switch(this.headType){
+        case '文章':
+          this.addArticleCollection(collectionData);
+        case '图文':
+          this.addPictureCollection(collectionData);
+        case '音乐故事收藏':
+          this.addMusicCollection(collectionData);
+        case '电影':
+          this.addMovieCollection(collectionData);
+        case '深夜电台收藏':
+          this.addRadioCollection(collectionData);
+        default:
+          console.log('类型不对哦');
+      }
+      
     },
-    ...mapMutations(['addArticleCollection'])
+    ...mapMutations(['addArticleCollection', 'addPictureCollection', 'addMusicCollection', 'addRadioCollection', 'addMovieCollection'])
   }
 }
 </script>

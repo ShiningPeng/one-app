@@ -4,7 +4,7 @@
       <i class="iconfont">&#xe61a;</i>
     </span>
     <span class="detail-type">{{detailType}}</span>
-    <span class="iconfont-container right" @click="addToCollection(collectionData)">
+    <span class="iconfont-container right" @click="addToCollection(collectionData)" v-show="colIsShow">
       <i class="iconfont collection">&#xe60b;</i>
     </span>
   </div>
@@ -20,7 +20,11 @@ export default {
     },
     collectionData:{
       type:Object,
-      default:{}
+      default:() => {}
+    },
+    colIsShow:{
+      type:Boolean,
+      default:false
     }
   },
   data () {
