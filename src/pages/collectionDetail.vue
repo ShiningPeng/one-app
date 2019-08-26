@@ -1,7 +1,8 @@
 <template>
   <div>
     <BackButton :detailType="type"  />
-    {{relativeData}}
+    <CollectionItem 
+    :description="item.desc" v-for="(item, index) in relativeData" :key="index"/>
   </div>
 </template>
 
@@ -32,23 +33,25 @@ export default {
     getProps() {
       this.type = this.$route.params.type;
       // this.colData = this.$route.params.colData;
+      console.log('coldetail.vue this.type', this.type);
       switch(this.type){
         case '文章':
-          this.relativeData.push(this.articleCollection);
+          this.relativeData.push(this.articleCollection);break;
         case '图文':
-          this.relativeData.push(this.pictureCollection);
+          this.relativeData.push(this.pictureCollection);break;
         case '音乐故事收藏':
-          this.relativeData.push(this.musicCollection);
+          this.relativeData.push(this.musicCollection);break;
         case '电影':
-          this.relativeData.push(this.movieCollection);
+          this.relativeData.push(this.movieCollection);break;
         case '深夜电台收藏':
-          this.relativeData.push(this.radioCollection);
+          this.relativeData.push(this.radioCollection);break;
         default:
           this.relativeData.push({meg:'你还没有进行收藏哦'})
       }
+      console.log('this.relativeData:---', this.relativeData)
     },
     getStoreData(type) {
-      console.log(this.pictureCollection);
+      console.log('state', this.$store.state);
     },
     // ...mapMutations['addArticleCollection','addMovieCollection']
   }

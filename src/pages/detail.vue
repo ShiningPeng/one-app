@@ -51,27 +51,28 @@ export default {
   },
   methods:{
     getData(){
-      console.log('调用了getData函数');
+      // console.log('调用了getData函数');
       const { id, type, headType} = this.$route.params;
       this.headType = headType;
       this.$axios.get(`https://www.easy-mock.com/mock/5cbf0110a70f960bc333c4e7/${type}`).then(res => {
-        console.log(res);
+        // console.log(res);
         this.current = res.data.result[id];
       })
     },
     addCollection(collectionData){
-      console.log('点击了收藏按钮');
+      console.log('点击了收藏按钮,collectionData:', collectionData);
+      console.log('headtype', this.headType);
       switch(this.headType){
-        case '文章':
-          this.addArticleCollection(collectionData);
-        case '图文':
-          this.addPictureCollection(collectionData);
+        case '问答':
+        case '连载':
+        case '阅读':
+          this.addArticleCollection(collectionData);break;
         case '音乐故事收藏':
-          this.addMusicCollection(collectionData);
+          this.addMusicCollection(collectionData);break;
         case '电影':
-          this.addMovieCollection(collectionData);
+          this.addMovieCollection(collectionData);break;
         case '深夜电台收藏':
-          this.addRadioCollection(collectionData);
+          this.addRadioCollection(collectionData);break;
         default:
           console.log('类型不对哦');
       }
