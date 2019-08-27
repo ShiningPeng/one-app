@@ -68,11 +68,11 @@ export default {
         case '连载':
         case '阅读':
           this.addArticleCollection(collectionData);break;
-        case '音乐故事收藏':
+        case '音乐':
           this.addMusicCollection(collectionData);break;
-        case '电影':
+        case '影视':
           this.addMovieCollection(collectionData);break;
-        case '深夜电台收藏':
+        case '电台':
           this.addRadioCollection(collectionData);break;
         default:
           console.log('类型不对哦');

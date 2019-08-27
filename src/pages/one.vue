@@ -6,7 +6,7 @@
     <keep-alive>
       <Scroll :data="items" :pullup="true" :pulldown="true" :refreshDelay=20>
         <OnePhotography :item="item" @addToCollection="addToPictureCollection"/>
-        <Commont :items="items" :date="date" />
+        <Commont :items="items" :date="date" @toggleToDetail="toggleToDetail"/>
       </Scroll> 
     </keep-alive>
     <!-- 摄影 -->
@@ -53,6 +53,9 @@ export default {
     ...mapState(['pictureCollection'])
   },
   methods: {
+    toggleToDetail(id, type, headType){
+      this.$router.push({ name:'Detail', params:{id, type, headType}});
+    },
     ...mapMutations(['addPictureCollection']),
     addToPictureCollection(data){
       console.log('点击了收藏按钮');

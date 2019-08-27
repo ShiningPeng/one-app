@@ -62,7 +62,6 @@ export default {
     }
   },
   computed:{
-   
     // ...mapState['articleCollection']
   },
   methods:{

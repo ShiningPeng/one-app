@@ -1,6 +1,6 @@
 <template>
   <div class="backbtn-container">
-    <span class="iconfont-container left" @click="$router.back()">
+    <span class="iconfont-container left" @click="goBack">
       <i class="iconfont">&#xe61a;</i>
     </span>
     <span class="detail-type">{{detailType}}</span>
@@ -38,6 +38,11 @@ export default {
   methods:{
     addToCollection(collectionData){
       this.$emit('addToCollection', collectionData);
+    },
+    goBack() {
+      window.history.length > 1
+        ? this.$router.go(-1)
+        : this.$router.push('/');
     }
   }
 }

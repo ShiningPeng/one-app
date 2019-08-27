@@ -7,7 +7,7 @@ const store = new Vuex.Store({
   state:{
     articleCollection:[],
     pictureCollection:[],
-    muiscCollection:[],
+    musicCollection:[],
     radioCollection:[],
     movieCollection:[]
   },

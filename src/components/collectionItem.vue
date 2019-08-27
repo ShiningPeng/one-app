@@ -1,6 +1,6 @@
 <template>
-  <div class="item-container">
-    <van-cell :title="ContentType" is-link size="large" :label="description" />
+  <div class="item-container" @click="toggleToDetail">
+    <van-cell :title="contentType" is-link size="large" :label="description" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@ export default {
       type:String,
       default:''
     },
-    ContentType:{
+    contentType:{
       type:String,
       default:''
     }
@@ -20,6 +20,11 @@ export default {
   data () {
     return {
 
+    }
+  },
+  methods:{
+    toggleToDetail() {
+      this.$emit('toDetail');
     }
   }
 }

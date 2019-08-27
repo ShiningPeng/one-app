@@ -53,7 +53,7 @@ export default {
   methods:{
     changeToDetail(id, type, headType) {
       console.log(id, type);
-      this.$router.push({ name:'Detail', params:{id, type, headType}});
+      this.$emit('toggleToDetail', id, type, headType);
     }
   }
 };
