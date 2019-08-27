@@ -4,7 +4,6 @@
       <div class="me-header">
         <span><i class="iconfont">&#xe6b6;</i></span>
         <div class="me-header-name">
-         
         </div>
         <span><i class="iconfont">&#xe857;</i></span>
       </div>
@@ -63,17 +62,12 @@ export default {
     }
   },
   computed:{
-    user () {
-      if(document.documentElement.scrollTop !== 0){
-        return this.userName;
-      }
-      return '';
-    },
+   
     // ...mapState['articleCollection']
   },
   methods:{
-    changeToDetail(type, colData) {
-      this.$router.push({name:'CollectionDetail', params:{type, colData}})
+    changeToDetail(type) {
+      this.$router.push({name:'CollectionDetail', params:{type}})
     } 
   }
 }

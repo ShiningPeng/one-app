@@ -60,8 +60,9 @@ export default {
       })
     },
     addCollection(collectionData){
+      // console.log('headtype', this.headType);
+      collectionData.headType = this.headType;
       console.log('点击了收藏按钮,collectionData:', collectionData);
-      console.log('headtype', this.headType);
       switch(this.headType){
         case '问答':
         case '连载':

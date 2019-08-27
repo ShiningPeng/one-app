@@ -1,8 +1,14 @@
 <template>
   <div>
     <BackButton :detailType="type"  />
-    <CollectionItem 
-    :description="item.desc" v-for="(item, index) in relativeData" :key="index"/>
+    <div class="collection-container">
+      <div class="content" v-if="relativeData.length">
+        <CollectionItem  :contentType="item.headType"
+        :description="item.title || item.desc" v-for="(item, index) in relativeData" :key="index"/>
+      </div>
+      <div v-else >还没有收藏哦</div>
+    </div>
+    
   </div>
 </template>
 
@@ -32,6 +38,7 @@ export default {
   methods:{
     getProps() {
       this.type = this.$route.params.type;
+      console.log( 'params:---', this.$route.params)
       // this.colData = this.$route.params.colData;
       console.log('coldetail.vue this.type', this.type);
       switch(this.type){
@@ -59,5 +66,6 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
-
+.collection-container
+  margin-top 100px
 </style>
